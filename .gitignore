@@ -1,5 +1,5 @@
 .DS_Store
 *.log
-*.aux
+*.aux*
 *.swp
 *.pdf
