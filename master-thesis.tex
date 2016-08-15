@@ -1,13 +1,21 @@
-\documentclass[a4paper,twoside,14pt]{report}
+\documentclass[a4paper,14pt]{report}
+
+%!TEX TS-program = xelatex
+%!TEX encoding = UTF-8 Unicode
+
+\usepackage{fontspec,xltxtra,xunicode}
+\usepackage[margin=3cm]{geometry}
+\setmainfont[Scale=1.22]{TH Sarabun New}
+\XeTeXlinebreaklocale 'th_TH'
 
 % \usepackage{Leafcutter}
-\usepackage[top=35mm, bottom=13mm, left=14mm, right=14mm]{geometry}
+% - - - - - - - - - - -
+% Configuration section
 
-\usepackage{xltxtra}
-\defaultfontfeatures{Scale=1.3}
-\setmainfont[Script=Thai,Ligatures=TeX]{TH Sarabun New}
-\XeTeXlinebreakskip = 0pt plus 1pt \relax %
-\setromanfont[Mapping=tex-tex, Scale=1.3]{THSarabunNew}
+\include{0-configure/values}
+\include{0-configure/configure}
+\include{0-configure/translate}
+% - - - - - - - - - - -
 
 \begin{document}
 
