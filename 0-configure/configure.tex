@@ -1,8 +1,26 @@
-\newcommand{\thesistitle}{การจัดลำดับกรณีทดสอบโดยคำนึงถึงการเปลี่ยนแปลงของชุดรหัสซอฟต์แวร์}
-\newcommand{\thesistitleeng}{Test case prioritization base-on changed source code}
+% - - - - - - - - - - - - - - - - - - - - - -
+% Chapter style
+\usepackage{lipsum}
+\usepackage{titlesec}
 
-\newcommand{\studentname}{สิทธิพงษ์ เหล่าโก้ก}
-\newcommand{\studentnameeng}{Sitdhibong Laokok}
+\titleformat{\chapter}[display]
+    {\normalfont\Large\bfseries\centering}
+    {\chaptertitlename\ \thechapter}{0pt}{\Huge}
 
-\newcommand{\advisor}{รศ. ดร. ธาราทิพย์ สุวรรณศาสตร์}
-\newcommand{\advisoreng}{Assc.Prof. Dr. Taratip Suwannasart}
+% \titleformat{\section}[display]
+%     {}
+%     {\thesection\ \thesectionnumber}{0pt}{}
+\makeatletter
+\renewcommand{\@seccntformat}[1]{%
+    \csname the#1\endcsname\ }
+\makeatletter
+
+% format: \titlespancing{COMMAND}{left}{before}{after}[right]
+\titlespacing{\chapter}{0pt}{20pt}{20pt}
+\titlespacing{\section}{0pt}{15pt}{15pt}
+\titlespacing{\subsection}{0pt}{15pt}{10pt}
+
+% Paragraph indent
+\setlength{\parindent}{7ex}
+\setlength{\parskip}{0.5\baselineskip plus2pt minus2pt}
+% - - - - - - - - - - - - - - - - - - - - - -
