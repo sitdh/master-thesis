@@ -24,12 +24,14 @@
     \csname the#1\endcsname\ }
 \makeatletter
 
+\newcommand{\indentforparagraph}{0.5in}
+
 % format: \titlespancing{COMMAND}{left}{before}{after}[right]
 \titlespacing{\chapter}{0pt}{20pt}{20pt}
 \titlespacing{\section}{0pt}{15pt}{15pt}
 \titlespacing{\subsection}{0pt}{15pt}{10pt}
 
 % Paragraph indent
-\setlength{\parindent}{0.5in}
+\setlength{\parindent}{\indentforparagraph}
 \setlength{\parskip}{0.5\baselineskip plus2pt minus2pt}
 % - - - - - - - - - - - - - - - - - - - - - -
