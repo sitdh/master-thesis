@@ -2,7 +2,47 @@
 {\list{}{\leftmargin=\indentforparagraph\rightmargin=0in}\item[]} %
 {\endlist}
 
-% \renewcommand\makecover{%
-% \thesistitle
-% }
+\newcommand{\cno}[1]{\center\noindent{#1}}
 
+\newcommand{\makecover}{%
+    % Thai page
+    \ifx{proposal}\undefined
+        \cno{\ThesisName}
+    \else
+        \cno{(โครงร่างวิทยานิพนธ์) \\ \ThesisName}
+    \fi
+
+    \vfill
+    \cno{\studentname}
+    \vfill
+    \cno{
+        วิทยานิพนธ์นี้เป็นส่วนหนึ่งของการศึกษาตามหลักสูตรปริญญา{\curriculumn} \\
+        สาขา{\major}~ภาควิชา{\department} \\
+        คณะ{\faculty}~{\university} \\
+        ปีการศึกษา~\academicYear
+    } 
+    \cno{\disclaimination}
+    \newpage
+
+    % English page
+    \ifx{\proposal}\undefined
+        \center{\onindent{\ThesisNameEn}}
+    \else
+        \center{\noindent{(Thesis proposal) \\ \ThesisNameEn}}
+    \fi
+
+    \vfill
+    \center{\studentnameEn}
+    \vfill
+
+    \cno{
+        A Thesis Submitted in Partial Fullfillment of the Requirements \\
+        for the Degree of \curriculumnEn in \majorEn \\
+        Department of \departmentEn \\
+        \facultyEn \\
+        \universityEn  \\
+        Academic Year \academicYearEn
+    }
+    \cno{\disclaiminationEn}
+    \newpage
+}

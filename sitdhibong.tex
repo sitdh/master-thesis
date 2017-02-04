@@ -1,16 +1,20 @@
-\documentclass[a4paper,14pt,thaithesis,master]{memoir}
+\documentclass[a4paper,16pt,proposal,master,oneside]{memoir}
 
 %!TEX TS-program = xelatex
 %!TEX encoding = UTF-8 Unicode
 
-\usepackage{float,listings,enumitem,wrapfig,pdfpages,verbatim,multicol,standalone,pgfgantt,graphicx,calc,fontspec,xltxtra,xunicode,changepage,lipsum}
+% \usepackage{float,listings,enumitem,wrapfig,pdfpages,verbatim,multicol,standalone,pgfgantt,graphicx,calc,fontspec,xltxtra,xunicode,changepage,lipsum}
 
+\usepackage{fontspec,xltxtra,xunicode,scrextend}
+\usepackage[top=1.5in,bottom=1in,left=1.5in,right=1in]{geometry}
 \usepackage{polyglossia}
-
-\setdefaultlanguage{thai}
 \newfontfamily\thaifont{TH Sarabun New}
-\setmainfont[Scale=2]{TH Sarabun New}
+\setmainfont{TH Sarabun New}
+\setdefaultlanguage{thai}
 \XeTeXlinebreaklocale 'th'
+\changefontsizes[16pt]{16pt}
+\XeTeXlinebreakskip = 0pt plus 1pt
+\defaultfontfeatures{Scale=1.23}
 
 % \usepackage{Leafcutter}
 % - - - - - - - - - - -
@@ -18,8 +22,9 @@
 
 \graphicspath{{./figure}}
 
-\include{0-configure/values}
+% \include{0-configure/values}
 \include{0-configure/configure}
+\include{0-configure/coverpage-config}
 \include{0-configure/translate}
 \include{0-configure/environment}
 % - - - - - - - - - - -
@@ -27,7 +32,8 @@
 \begin{document}
 
 % Preliminary section
-\include{0-preliminary/coverpage}
+\makecover
+% \include{0-preliminary/coverpage}
 
 % % Title page
 
