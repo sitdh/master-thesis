@@ -2,47 +2,72 @@
 {\list{}{\leftmargin=\indentforparagraph\rightmargin=0in}\item[]} %
 {\endlist}
 
-\newcommand{\cno}[1]{\center\noindent{#1}}
+\newcommand{\cno}[1]{#1}
+
+\newenvironment{nscenter}
+ {\setlength{\topsep}{1.5ex}\trivlist\item\relax\centering}
+ {\endtrivlist}
+
+\newenvironment{approval} 
+    { 
+        \setlength{\parskip}{.1em} 
+        \setlength{\parindent}{2.5em} 
+    }
+    { \\\par}
 
 \newcommand{\makecover}{%
+    % - - - - - - - - - - - - - - - - - - - - 
     % Thai page
-    \ifx{proposal}\undefined
-        \cno{\ThesisName}
-    \else
-        \cno{(โครงร่างวิทยานิพนธ์) \\ \ThesisName}
-    \fi
+    % - - - - - - - - - - - - - - - - - - - - 
+    \pagenumbering{gobble}
+    \thispagestyle{empty}
 
-    \vfill
-    \cno{\studentname}
-    \vfill
-    \cno{
+    \begin{nscenter}
+        \ifx{proposal}\undefined
+            \ThesisName
+        \else
+            (โครงร่างวิทยานิพนธ์) \\
+            \ThesisName
+        \fi
+
+        \vfill
+        \studentname
+        \vfill
+
         วิทยานิพนธ์นี้เป็นส่วนหนึ่งของการศึกษาตามหลักสูตรปริญญา{\curriculumn} \\
         สาขา{\major}~ภาควิชา{\department} \\
         คณะ{\faculty}~{\university} \\
-        ปีการศึกษา~\academicYear
-    } 
-    \cno{\disclaimination}
-    \newpage
+        ปีการศึกษา~\academicYear \\
+        \vspace{1em}
+        \disclaimination
 
+        \newpage
+    \end{nscenter}
+
+    % - - - - - - - - - - - - - - - - - - - - 
     % English page
-    \ifx{\proposal}\undefined
-        \center{\onindent{\ThesisNameEn}}
-    \else
-        \center{\noindent{(Thesis proposal) \\ \ThesisNameEn}}
-    \fi
+    % - - - - - - - - - - - - - - - - - - - - 
+    \begin{nscenter}
+        \ifx{\proposal}\undefined
+            \ThesisNameEn
+        \else
+            (Thesis proposal) \\ 
+            \ThesisNameEn
+        \fi
 
-    \vfill
-    \center{\studentnameEn}
-    \vfill
+        \vfill
+        \studentnameEn
+        \vfill
 
-    \cno{
         A Thesis Submitted in Partial Fullfillment of the Requirements \\
         for the Degree of \curriculumnEn in \majorEn \\
         Department of \departmentEn \\
         \facultyEn \\
         \universityEn  \\
-        Academic Year \academicYearEn
-    }
-    \cno{\disclaiminationEn}
-    \newpage
+        Academic Year \academicYearEn \\
+        \vspace{1em}
+        \disclaiminationEn
+        \newpage
+    \end{nscenter}
+    \clearpage
 }
